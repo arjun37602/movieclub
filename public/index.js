@@ -31,12 +31,18 @@ async function main(inp) {
     const BoxOffices = allData.BoxOffice
     const runtime = allData.runtime
     const plot = allData.summary
+    const Director = allData.Director
+    const date = allData.date
+    const Awards = allData.Awards
     movieWrapper.innerHTML = `<div id="movie-details">
       <h2 id="title">${titles}</h2>
       <img id="poster" src="${imageUrl}">
-      <h3 id="rating">${ratings}</h3>
-      <p id="summary">${plot}</p>
+      <h3 id="rating"> IMDB rating: ${ratings}</h3>
+      <p id="summary">Synopsis: ${plot}</p>
       <p id="box">Box Office Collection: ${BoxOffices}</p>
+      <p id="box">Director: ${Director}</p>
+      <p id="box"> Release Date: ${date}</p>
+      <p id="box">Awards: ${Awards}</p>
       </div>`
 }
 
@@ -52,7 +58,10 @@ async function getData(input) {
     "rating": data.Ratings[0].Value,
     "runtime": data.runtime,
     "BoxOffice": data.BoxOffice,
-    "summary": data.Plot
+    "summary": data.Plot,
+    "Director": data.Director,
+    "Awards": data.Awards,
+    "date": data.Released
   }
 }
 
