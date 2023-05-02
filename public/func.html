@@ -1,22 +1,19 @@
-<html>
+<html lang="en">
   <head>
-    <title>Page Title</title>
+    <title id="pageTitle">Movie Club</title>
+    <link rel="stylesheet" href="func.css">
   </head>
   <body>
-    <h1>Heading 1</h1>
-    <p>This is a paragraph.</p>
-    <form>
-        <input type="text" placeholder="Search Movie" id="inputField">
-        <button type="button" id="searchButton">Search</button>
-      </form>
-      <div id="movie-details">
-        <h2 id="title"></h2>
-        <p id="year"></p>
-        <p id="rating"></p>
-        <p id="summary"></p>
-        <p id="box"></p>
-        <img id="poster" src="">
+    <div id="nav">
+      <div id="logoAndName">
+        <img src="logo.png" alt="" id="logoImage">
+        <h1 id="name"><a href="index.html">Movie Club</a></h1>
       </div>
+      <form id="searchForm">
+        <input type="text" placeholder="Search Movie" id="inputField">
+      </form>
+    </div>
+    <div id="movieWrapper"></div>
   </body>
   <script src="index.js"></script>
 </html>

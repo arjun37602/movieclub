@@ -1,0 +1,53 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-image: url("gradient.png");
+    opacity: 0.9;
+}
+
+#navbarWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items:first baseline;
+    justify-content: flex-start;
+}
+
+#search {
+    margin: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+#contentWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#about {
+    background-color: white;
+    border-radius: 15px 45px 15px 45px;
+    width: 30%;
+    padding: 20px;
+}
+#tech {
+    background-color: white;
+    border-radius: 15px 45px 15px 45px;
+    width: 30%;
+    padding: 20px;
+}

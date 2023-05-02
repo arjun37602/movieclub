@@ -1,8 +1,9 @@
 const work = document.getElementById("inputField");
 const apiUrl = "https://www.omdbapi.com/?t=";
 const apiKey = "&apikey=599cbf5c";
-const submitButton = document.getElementById("searchButton");
-const mainMovie = document.getElementById("movie-details")
+const pageTitle = document.getElementById("pageTitle");
+const movieWrapper = document.getElementById("movieWrapper");
+const mainMovie = document.getElementById("movie-details");
 const title = document.getElementById("title");
 const rating = document.getElementById("rating");
 const summary = document.getElementById("summary");
@@ -12,11 +13,12 @@ const year = document.getElementById("year");
 const poster = document.getElementById("poster");
 const boxoffice = document.getElementById("box");
 
-
-
-submitButton.addEventListener("click", function () {
-  if (work.value != "") {
-    main(work.value);
+work.addEventListener("keypress", function(event) {
+  if (event.key == "Enter") {
+    event.preventDefault();
+    if (work.value != "") {
+      main(work.value);  
+    }
   }
 });
 
@@ -29,11 +31,13 @@ async function main(inp) {
     const BoxOffices = allData.BoxOffice
     const runtime = allData.runtime
     const plot = allData.summary
-    title.innerHTML = "Title: "+ titles;
-    rating.innerHTML = "Rating: " + ratings;
-    poster.src = imageUrl;
-    summary.innerHTML = "Summary: " + plot
-    boxoffice.innerHTML = "Box Office Collection: " + BoxOffices
+    movieWrapper.innerHTML = `<div id="movie-details">
+      <h2 id="title">${titles}</h2>
+      <img id="poster" src="${imageUrl}">
+      <h3 id="rating">${ratings}</h3>
+      <p id="summary">${plot}</p>
+      <p id="box">Box Office Collection: ${BoxOffices}</p>
+      </div>`
 }
 
 async function getData(input) {
@@ -57,8 +61,3 @@ async function apiCall(url) {
   let data = await response.json();
   return data;
 }
-
-
-
-
-
